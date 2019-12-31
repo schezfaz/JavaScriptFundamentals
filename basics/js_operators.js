@@ -7,6 +7,8 @@
     !== no type conversion is done
 */
 
+/* Precedence of operators: MDN: Operator precendence table */
+
 console.log(1==1); //true
 console.log(1==true); //true, converts 1 to boolean
 console.log(1===true); //false typeof(1):number and typeof(true): boolean
@@ -45,3 +47,17 @@ console.log(user_name || defaultName); //will log user_name if it is valid, else
     while working with strings, keep the case in mind
 */
 console.log("Zoo">"apple"); //false, all uppercase chars are considered lower than lowercase chars due to ascii value
+
+/*Conditional operator: can be used in place of an if statement */
+console.log(5>4?'yes':'no');
+
+/* assignment operators: +=, -=, /=, *=, %= 
+    <<=: shift left operator; take integer and shift its bit by 1 to the left; works with integets/bit fields
+    >>=: shift right
+    >>>=: shift right + keep the sign
+    and, or, xor bitwise operators
+*/
+let year = 1984;
+year >>= 1; //equivalent to dividing by 2
+year <<= 1; //equivalent to multiplying by 2
+console.log(year);
