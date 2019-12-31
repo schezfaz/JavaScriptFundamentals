@@ -89,4 +89,8 @@ startCars(...carCodes); //iterates through elements of a string
 typeof(1); //number 
 typeof(true); //boolean
 typeof('sup'); //string
-typeof(function(){}); //function
+typeof(function(){}); //functions
+typeof({}); //object
+typeof(null); //object
+typeof(undefined); //undefined
+typeof(NaN); //number
