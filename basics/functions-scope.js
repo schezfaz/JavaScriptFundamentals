@@ -49,3 +49,28 @@ console.log(app);
 
 //generally functions get returned from iifes, that is where the value of an iife comes from, from creating a closure
 //i.e. real value of iife is when it is used as a closure
+
+/* closures
+    function execution: runs its code, completes, its variables/functions go out of scope
+    sometimes you need a functions internal variables/nested functions to hang around
+*/
+
+let iife = (function(){
+    let car_id = 1234;
+    let get_id = function(){
+        return car_id; //car_id is not declared in get_id function, so it will reach out to the parent function
+    };
+
+    return{ //this is how we create a closure
+        get_id: get_id //return an object with property get_id and its value is get_id the func get_id, property name can be anything
+    };
+})();
+
+console.log(iife.get_id()); //when we call get_id(), nested function get_id() gets executed, car_id gets looked up [found in the parent function]
+
+/*variable iife gets set to the return value of the iife, which includes a reference to the function get_id. 
+    as long as we hold onto the reference of the function get_id, the iife will persist, in turn its parent functions will persist 
+    along with their variables. 
+
+    Thus, any variables declared in an iife will persist, along with any functions. We just need to make sure that we return a reference to the func
+*/
