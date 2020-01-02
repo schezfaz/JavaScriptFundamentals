@@ -74,3 +74,24 @@ console.log(iife.get_id()); //when we call get_id(), nested function get_id() ge
 
     Thus, any variables declared in an iife will persist, along with any functions. We just need to make sure that we return a reference to the func
 */
+
+/* this keyword
+    - refers to an object, does not refer to the function as an object itself, refers to a special object: context of the function
+    - this keyword is frequently used in functions that are properties of objects
+
+    let fn = function(){
+        console.log(this === window); --window is the global object
+    };
+
+    fn(); //true
+*/
+
+let o = { //o is an object
+    car_name : "schez",
+    getName : function(){
+        console.log(this);
+        return this.car_name; //this refers to the object(o) that holds the function getName()
+    }
+};
+
+console.log( o.getName());
