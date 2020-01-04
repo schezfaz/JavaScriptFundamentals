@@ -119,3 +119,27 @@ console.log(c.getID.apply(next_Car, ['ID: '])); //passing array containing one s
 
 let newFn = o.getName.bind(newCar); //passing new value/context for this == newCar, creates a new function which is stored in variable newFn
 console.log(newFn());  
+
+/*arrow functions: concise and modern syntax for function declaration
+    empty braces: no paramters to the function
+    after => return value is specified i.e. 23
+    arrow functions do not have their own this value, 'this' refers to the enclosing context
+    they were made to get around the 'this' problem, thus they are better for method declarations
+*/
+let get_status = () => 23;
+console.log(get_status());
+
+let prefixing = prefix => prefix + 10; //if one parameter, no need for ()
+console.log(prefixing('this is the prefix:  '));
+
+let presuffix = (prefix,suffix) => prefix + " something " + suffix;
+console.log(presuffix("pre","suff"));
+
+let arrowfunc = (prefix,suffix) => { //can specify function body, however we need to specify the return keyword
+    return prefix + suffix;
+}
+console.log(arrowfunc('yes','and'));
+
+let underarrow = _ => '123'; //_ instead of ()
+console.log(underarrow());
+
