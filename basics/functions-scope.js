@@ -89,9 +89,33 @@ console.log(iife.get_id()); //when we call get_id(), nested function get_id() ge
 let o = { //o is an object
     car_name : "schez",
     getName : function(){
-        console.log(this);
+        console.log(this); // o
         return this.car_name; //this refers to the object(o) that holds the function getName()
     }
 };
 
 console.log( o.getName());
+
+/* There are 2 ways to call a function: (1). Call function (2). Apply function
+    main purpose of the call/apply function is to change the value of this i.e. to change the object which is the context of the function
+
+*/
+
+let newCar = {car_name: "schezeeeen"}; //call is a special function which specifies the new context: newCar, therefor this.car_name now will refer to newCar
+console.log(o.getName.call(newCar)); //schezeeeen
+
+//apply: accepts an array of arguements
+let c = {
+    car_identification: '123',
+    getID : function(prefix){
+        return prefix + this.car_identification;
+    }
+};
+
+let next_Car = {car_identification: '234'};
+console.log(c.getID.apply(next_Car, ['ID: '])); //passing array containing one string
+
+//bind: make a copy of the function && change the this value, assigns a new context: a value that will be accessed by this
+
+let newFn = o.getName.bind(newCar); //passing new value/context for this == newCar, creates a new function which is stored in variable newFn
+console.log(newFn());  
