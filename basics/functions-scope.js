@@ -143,3 +143,13 @@ console.log(arrowfunc('yes','and'));
 let underarrow = _ => '123'; //_ instead of ()
 console.log(underarrow());
 
+/* default parameters: give variables default values
+    declared on the right side of parameter list
+*/
+
+let trackCar = function(car,city='Mumbai'){
+    console.log(car + ' ' + city);
+};
+
+console.log(trackCar('mercedez')); //default city: mumbai
+console.log(trackCar('mercedez','NY')); 
