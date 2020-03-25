@@ -94,7 +94,8 @@ let result = carNames.every( //will return true or false based on condition, wor
 );
 console.log(result);
 
-let car_match = carNames.find(
+let car_match = carNames.find( //first instance where condition is success
     car => car.carID > 100
 );
 console.log(car_match);
+
