@@ -12,10 +12,14 @@ Building a Product Management Application:
 
 Components: index.html --> App Component
 
-App Component
-Welcome Page Component
-Product List Component
-Rating Star Component
-Product Detail Component
-Rating Star Component
-Product Data Service
++ App Component
+    - Welcome Page Component
+    - Product List Component
+        - Rating Star Component
+    - Product Detail Component
+    - Rating Star Component
++ Product Data Service
+
+Modules: resolve namespace and code organisation issues
+
+if you import/export anything from a file, it becomes a module
