@@ -17,7 +17,7 @@ Components: index.html --> App Component
     - Product List Component
         - Rating Star Component
     - Product Detail Component
-    - Rating Star Component
+        - Rating Star Component
 + Product Data Service
 
 Modules: resolve namespace and code organisation issues
