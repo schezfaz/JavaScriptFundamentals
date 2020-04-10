@@ -9,7 +9,6 @@ Component = Template (HTML for UI) + Class (code associated with view; contains:
 
 Modules = Help organise application into cohesive blocks of functionality [Root module + feature modules]
 
-
 Building a Product Management Application:
 
 Components:
@@ -22,3 +21,5 @@ index.html --> App Component
         - Rating Star Component
 + Product Data Service
 
+src/app folder contains all major features of the application as a subfolder
+everything outside src/ and e2e/ are boiler-plate files
