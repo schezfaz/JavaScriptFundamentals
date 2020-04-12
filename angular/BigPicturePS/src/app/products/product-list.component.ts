@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent{
     pageTitle: string = 'Product List';
+    showImage: boolean = false;
+    listFilter: string = 'Product List';
+    imageWidht: number = 50;
+    imageMargin: number = 2;
     products: any[] = [
         {
             "productId": 1,
@@ -29,4 +33,7 @@ export class ProductListComponent{
           }
     ]; //we use any datatype when we don't know the specific datatype
 
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
 }
