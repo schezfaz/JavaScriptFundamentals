@@ -19,3 +19,5 @@ Components: index.html --> App Component
 Modules: resolve namespace and code organisation issues, App module is the root module, if you import/export anything from a file, it becomes a ES module, Modules contain components, corresponding depending files, a component can belong to only one module
 
 Decorator: function that adds metadata to a class/members/method arguements, scope is limited to the feature it decorates, prefixed with an @ sign. Angular has built in decorators, you can build your own decorators as well. Position the decorator immediately in front of the feature you are decorating. No semi-colon followed after the decorator definition.
+
+Interface: specification identifying a related set of properties and methods, classes implement interfaces, use interface as a datatype. ES6 and ES5 do no support interfaces so they are transpiled out and not converted to javascript. TypeScript supports interfaces. Thus, interfaces are development time only. 
