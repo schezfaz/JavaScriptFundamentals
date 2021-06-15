@@ -35,5 +35,16 @@ Stuff used:
 
 - Compass Needs Calibration (not widely supported)
 
+# 2 Major Frameworks:
+1. A-Frame (By Mozilla)
+ - Scenes are created using tags
+ - Wrapped for Three.js
+
+2. React VR
+
+
+
+
+
 
 
