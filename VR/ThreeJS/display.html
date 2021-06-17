@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Three.js</title>
+        <style>
+            body {
+                margin: 0;
+            }            
+        </style>
+    </head>
+
+    <body>
+        <script src="js/three.js"></script>
+        <script>
+            //set up scene, camera, renderer
+            const scene = new THREE.Scene();
+
+            //Perspective Camera is a type of Camera in Three.js
+            const camera = new THREE.PerspectiveCamera(
+                75, //FOV
+                window.innerWidth / window.innerHeight, //Aspect Ratio
+                0.1, //near clipping plane
+                1000 //far clipping plane
+            );
+
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize( window.innerWidth, window.innerHeight); //set size at which we want the renderer to render our app
+            document.body.appendChild(renderer.domElement); //canvas element the renderer uses to display the scene to us
+        
+            /*To create a cube - BoxGeometry object contains all points (vertices) and fill (faces) of the cube*/
+            const geometry = new THREE.BoxGeometry();
+
+            /*Material to colour the cube; Materials take an object of properties to be applied to it*/
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x00ff00 //green
+            });
+
+            /*Mesh: An object that takes a geometry and applies a material to it - which we can then insert into the scene*/
+            const cube = new THREE.Mesh( geometry, material);
+            
+            /*by default: scene.add() will add the object to coordinatess (0,0,0) causing both camera and cube to be inside each other*/
+            scene.add(cube);
+            
+            /*moving camera out a bit to avoid overlap*/
+            camera.position.z = 5;
+
+            /*rendered or animate loop to render our scene and camera
+              this will create a loop that causes the renderer to draw the scene everytime the scene is refreshed - typically, 60 times per second
+            */
+            function animate(){
+                requestAnimationFrame( animate ); /*requestAnimationFrame >>> setInterval() as it pauses the loop when a user navigates to another browser tab*/
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            }
+
+            animate();
+        </script>
+    </body>
+</html>
