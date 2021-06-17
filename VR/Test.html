@@ -1,0 +1,42 @@
+<!--
+    A-frame distance units are specified in meters
+    Three.js works in Radians, A-frame works in 360 degrees
+    scale: change size
+    position,rotation, scale: x,y,z parameters
+    CTRL + ALT + I -> A-frame's Visual Editor
+-->
+
+
+<!DOCTYPE html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-entity position="0 0 5">
+            <a-camera></a-camera>
+        </a-entity>
+        <a-box 
+            width="2" 
+            height="2" 
+            depth="2" 
+            color="#FF0000"
+            position="0 1 -5" 
+            rotation="0 45 0"
+            scale="1 1 1"></a-box>
+    </a-scene>
+
+</body>
+
+<!--
+    Materials:
+    Assest material="src: #brick-texture"
+    <a-animation/>
+    Texture
+    Components: Reusable code in A-frame
+    AFRAME.registerComponent API
+    Schema: properties allowed to be manipulated
+
+-->
