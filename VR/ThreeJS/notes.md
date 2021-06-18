@@ -9,3 +9,5 @@
 **Aspect Ratio:** Width of element/height
 
 **Near & Far clipping plane:** Objects further away from the camera that the value of far or closer than near value will not be rendered
+
+Polyfill: Browser fallback
